@@ -36,7 +36,16 @@ local plugins = {
       vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
     end
-    
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { 
+      "nvim-telescope/telescope.nvim", 
+      "nvim-lua/plenary.nvim" 
+    },
+    config = function ()
+      vim.keymap.set("n", "<space>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
+    end
   },
   {
     'nvim-treesitter/nvim-treesitter',
@@ -48,6 +57,18 @@ local plugins = {
         sync_install = false,
         highlight = { enable = true },
         indent = { enable = true },
+      })
+    end
+  }, 
+  {
+    'nvim-tree/nvim-web-devicons',
+    lazy = false,
+    config = function()
+      local configs = require('nvim-web-devicons')
+      configs.setup({
+        color_icons = true,
+        default = true,
+        strict = true 
       })
     end
   }
