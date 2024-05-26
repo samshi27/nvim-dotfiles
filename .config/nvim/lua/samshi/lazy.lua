@@ -15,7 +15,7 @@ require("lazy").setup({
   { import = "samshi.plugins" }, { import = "samshi.plugins.lsp" }
 }, {
   install = {
-    colorscheme = { "nightfly" }
+    colorscheme = { "everforest" }
   },
   checker = {
     enabled = true,
